@@ -1,0 +1,64 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.4rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        /*to stop potentiel shaking on anumation, we add this ligne*/
+        backface-visibility: hidden;
+        /*transition is the simple way to create effects, all is to select all properties, and 2s for the time */
+        transition: all .2s;
+        /*as we want the ::after (which have a position:absolute) to refer to this element*/
+        position: relative;
+        font-size: 1.6rem;
+    }
+    &:hover {
+        transform: translateY(-3px);
+        //the mix of the color, rgba et rgb works only with sass
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        &::after {
+            /*grossit 1.5 fois. the simple one: transform: scale(1.5);
+            more complexe:*/
+            transform: scaleX(1.4) scaleY(1.6);
+            /*that is the trick to fade something up*/
+            opacity: 0;
+        }
+    }
+    /*!!! ici on part du :hover . Donc le -1 aura un effet de descendre*/
+    &:active {
+        transform: translateY(-1px);
+        /*here is half of the hover value, as we clicked on it*/
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &::after {
+        /*for this sudo effect, the content: and display: property have to appear, even empty*/
+        content: '';
+        /*as the btn is already a inline-block*/
+        display: inline-block;
+        /*pourcentage par rapport au parent donc au &*/
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        /*this is the start of the effect link to &:hover::after*/
+        transition: all .4s;
+    }
+    &--animated {
+        /*last value is a start delay, so 0,75s*/
+        animation: moveInButton .5s ease-out .75s;
+        /*permet de palier au delay, d'initialiser le stade initial de depart d'animation sans delay.*/
+        animation-fill-mode: backwards;
+    }
+}

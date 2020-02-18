@@ -1,0 +1,42 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    /*predefine the line-height 1.7 fois bigger than the default one*/
+    color: $color-grey-dark;
+    padding: 3rem;
+    /*so from here all the child class of the doc herite de border-box*/
+    box-sizing: border-box;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    /*to stop potentiel shaking on anumation, we add this ligne*/
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        /*to validate the @keyframes animation, we need this 2 lines*/
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        /*accelere ou ralentit le debut ou la fin, ou alterne ease-in-out*/
+        animation-timing-function: ease-out;
+        /*set a delay before the animation start
+        animation-delay: 3s;
+        repeat an animation few times
+        animation-iteration-count: 3;*/
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        /*write it on one line to be faster*/
+        animation: moveInRight 2s ease-out;
+    }
+}

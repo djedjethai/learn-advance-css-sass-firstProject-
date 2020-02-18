@@ -1,0 +1,30 @@
+/* universal selector will select all elements on the page and apply it to them. to prevent pre-setting of the differents browser.
+Like it s the same for all*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /*by default box-sizing do not herite. but setting up the all page like it will make it everywhere*/
+    box-sizing: inherit;
+}
+
+
+/*html element is the root font-size. so set it up, and then we use rem with all other font-size 
+(like this we can modify this one, and all get modify)*/
+
+html {
+    //that s define what rem is.
+    /*10px to make it easy ! as 1rem is root's font-size * rem. So 1rem will be 10px.
+    But we don t want it in px bc it will lock the screen of the user: if he want to agrandir, il ne pourra plus, donc
+    on convertir en %. 100% = 16px dc 62.5% = 10px*/
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+/*setting it here will make it available for the all doc, via l'heritage*/
