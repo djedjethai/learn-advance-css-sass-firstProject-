@@ -1,0 +1,19 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .15;
+    overflow: hidden;
+    // here is to adjust the video's size
+    &__content {
+        width: 100%;
+        height: 100%;
+        // if we don t add that the video will be fine for the width but not hight enought due to the ratio
+        // instead of 'background-size: cover' which work on background, object-fit works on html elements. 
+        // so it would work the same with img
+        object-fit: cover;
+    }
+}

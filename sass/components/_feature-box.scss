@@ -7,7 +7,7 @@
     /*too much border radius does not look modern*/
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-    transition: all .2s;
+    transition: transform .3s;
     &__icon {
         font-size: 6rem;
         margin-bottom: .5rem;
@@ -16,9 +16,8 @@
         -webkit-background-clip: text;
         color: transparent;
     }
-    &__text {}
     &:hover {
-        transform: translateY(-20px);
+        transform: translateY(-2rem) scale(1.03);
         box-shadow: 0 2.5rem 1.5rem rgba($color-black, .2);
     }
 }

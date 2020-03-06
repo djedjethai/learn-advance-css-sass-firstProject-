@@ -1,0 +1,42 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    &__input {
+        font-size: 1.5rem;
+        // plutot que de repeter la font....
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        // as the hover have border-bottom: 3px. we set it here as transparent, like it the element under do not move on hover mode
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        &:focus {
+            outline: none;
+            background-color: rgba($color-white, .9);
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+            // pareil que &:focus:invalid
+            &:invalid {
+                border-bottom: 3px solid $color-secondary-dark;
+            }
+        }
+        // only work on safari and chrome
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+    &__label {
+        font-size: 1.2rem;
+        font-weight: bold;
+        // to position it on the same level of the text
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+    }
+    &__input:placeholder-shown {}
+}
