@@ -1,4 +1,6 @@
 .btn {
+    // this &, alone is to activate the btn as well. bc a button do not have &:link et &:visited sudo
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -13,6 +15,9 @@
         /*as we want the ::after (which have a position:absolute) to refer to this element*/
         position: relative;
         font-size: $default-font-size;
+        // change for the button element (car jusqu a present all button was in fact some <a href...>)
+        border: none;
+        cursor: pointer;
     }
     &:hover {
         transform: translateY(-3px);
@@ -27,7 +32,9 @@
         }
     }
     /*!!! ici on part du :hover . Donc le -1 aura un effet de descendre*/
+    &:focus,
     &:active {
+        outline: none;
         transform: translateY(-1px);
         /*here is half of the hover value, as we clicked on it*/
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);

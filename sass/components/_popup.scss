@@ -1,0 +1,57 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    // visibility sert a faire disparaitre les element. bc with opacity 0 we don t see them but they r still there
+    visibility: hidden;
+    transition: all .3s;
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__content {
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        // table will have the same effect as float. But will set the same hight for the table-cell
+        display: table;
+        overflow: hidden;
+    }
+    &__left {
+        width: 33.333333%;
+        display: table-cell;
+    }
+    &__right {
+        width: 66.666666%;
+        display: table-cell;
+        // center the hight inside the table-cell element
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+    }
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        -moz-column-count: 2; // set the text in 2 column, coool
+        -moz-column-gap: 4rem; // 1em = 14px (as 1em est l'equivalent du parent's element)
+        -moz-column-rule: 1px solid $color-grey-light-2;
+        column-count: 2; // set the text in 2 column, coool
+        column-gap: 4rem; // 1em = 14px (as 1em est l'equivalent du parent's element)
+        column-rule: 1px solid $color-grey-light-2;
+        // hyphens est le tire si le mot est coupe, as it s a new feature
+        -moz-hyphens: auto; // for mozilla firefox
+        -ms-hyphens: auto; // for microsoft(edge)
+        -webkit-hyphens: auto; // for chrome/safari
+        hyphens: auto;
+    }
+}

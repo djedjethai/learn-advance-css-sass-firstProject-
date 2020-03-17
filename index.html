@@ -16,6 +16,29 @@
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toogle">
+        <label for="navi-toogle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="" class="navigation__link"><span>01</span>About natous</a></li>
+                <li class="navigation__item">
+                    <a href="" class="navigation__link"><span>02</span>Your Benefits</a></li>
+                <li class="navigation__item">
+                    <a href="" class="navigation__link"><span>03</span>Popular tours</a></li>
+                <li class="navigation__item">
+                    <a href="" class="navigation__link"><span>04</span>Stories</a></li>
+                <li class="navigation__item">
+                    <a href="" class="navigation__link"><span>05</span>Book now</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
     <header class="header">
         <div class="header__logo-box">
             <img src="img/logo-white.png" alt="logo" class="header__logo" />
@@ -135,7 +158,7 @@
                                 <div class="card__price-box">
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$345</p>
-                                    <a href="#" class="btn btn--white">Book now !</a>
+                                    <a href="#popup" class="btn btn--white">Book now !</a>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +190,7 @@
                                 <div class="card__price-box">
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$345</p>
-                                    <a href="#" class="btn btn--white">Book now !</a>
+                                    <a href="#popup" class="btn btn--white">Book now !</a>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +222,7 @@
                                 <div class="card__price-box">
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">$345</p>
-                                    <a href="#" class="btn btn--white">Book now !</a>
+                                    <a href="#popup" class="btn btn--white">Book now !</a>
                                 </div>
                             </div>
                         </div>
@@ -285,11 +308,30 @@
                             </div>
                             <div class="form__group">
                                 <input type="text" class="form__input" placeholder="Full Name" id="name" required>
-                                <label for="name">Full name</label>
+                                <label for="name" class="form__label">Full name</label>
                             </div>
                             <div class="form__group">
                                 <input type="email" class="form__input" placeholder="Email address" id="email" required>
-                                <label for="email">Email address</label>
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+                            <div class="form__group u-margin-bottom-medium">
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="small" name="size">
+                                    <label for="small" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Small tour group
+                                    </label>
+                                </div>
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Large tour group
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <button class="btn btn--green">Next step &rarr;</button>
                             </div>
                         </form>
                     </div>
@@ -297,7 +339,48 @@
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="img/logo-green-2x.png" alt="logo__footer" />
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <div class="footer__copyright">
+                    Built my <a href="#" class="footer__link">harry dupont</a> for his online course <a href="#" class="footer__link">advance css and sass</a>. Copyright &copy; bye harry Dupont
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="img/nat-8.jpg" alt="tour_pic" class="popup__img">
+                <img src="img/nat-9.jpg" alt="tour_pic" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; please read this termes before booking</h3>
+                <p class="popup__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend orci quis aliquam luctus. Maecenas imperdiet nisl ut felis porttitor, nec porttitor nisi blandit. Etiam magna eros, varius a lectus ac, facilisis egestas lectus. Nulla id faucibus dolor.
+                    Quisque tortor mauris, accumsan vitae orci id, lobortis maximus sem. Duis eu gravida purus, eu tristique mi. Phasellus nec tortor eu neque congue aliquam et sed leo. Duis efficitur dui sed ullamcorper sagittis. Duis pulvinar risus
+                    massa, a vulputate dui egestas quis. In varius fringilla augue, id venenatis diam accumsan vitae.
+                </p>
+                <a href="#" class="btn btn--green">Book now</a>
+            </div>
+        </div>
+    </div>
     <!--<section class="grid-test">
         <div class="row">
             <div class="col-1-of-2">
